@@ -1,0 +1,83 @@
+Date:         Dienstag, 14. Juni 2005  
+Project:      A9M9360_2
+Number:       ST-A9M9360_2_V02/0382
+Components:   186
+
+Pos   Number       Description                                      Qty    Name
+--------------------------------------------------------------------------------
+
+1     786          Lizenz IEEE802.3 (MAC-Adresse)                    1     MAC                                
+2     L02573       Leiterplatte A9M9360_2, ML10, d=1.4mm             1     LP1                                
+3     MB01543      Buchsenl. 120pol., 2reih., 0.8mm                  2     X1-2                               
+4     TA01753      3A, 0.03R, 120R/100MHz, 0805, Ferrit              2     L6-7                               
+5     TA02139      0.5R, 0.2A, 600R/100MHz, 0603, Emi Filter         1     L4                                 
+6     TA02389      4.7uH, 140mR, 0.9A, CDRH2, Spule                  1     L2                                 
+7     TA02512      TPS2022, SO8, 1A, -40-+85°C, Power Switch         1     U18                                
+8     TC00476      10uF, 16V, 1210, Kondensator                      1     C21                                
+9     TC01468      33µF, 6.3V, 10% oder 20%, SMD, B, Tantal          7     C2-3;C47;C55                       
+                                                                           C66;C68-69
+10    TC01604      100µF, 6.3V, 10%, Bauf. C, low ESR, Kondensator   1     C22                                
+11    TC01637      1µF, 6,3V, 0603, 10%, Kondensator                 1     C27                                
+12    TC01909      220pF, 50V, 0603, 5%, COG, Kondensator            2     C9-10                              
+13    TC02328      100nF, 10V, 0402, X5R, Kondensator                51    C1;C4-6;C11-20                     
+                                                                           C24-26;C28-42;C44-46
+                                                                           C48-51;C53;C56-58
+                                                                           C61-65;C67;C71-72
+14    TC02451      1nF, 50V, 0402,  X7R, Kondensator                 1     C70                                
+15    TC02508      22pF, 50V, 0402, NP0, 5%, Kondensator             2     C7-8                               
+16    TC02526      10pF, 50V, 0402, NP0, 5%, Kondensator             5     C23;C52;C54                        
+                                                                           C59-60
+17    TD00520      SS16, 60V, 1A, DO-214AC, Schottky Diode           1     V3                                 
+18    TD01441      BAT64-05, Doppeldiode, SOT23, SMD, Schottky-Diode 1     V1                                 
+19    TI01961      QS32XVH245, QVSOP40, -40-+85°, 3.3V               1     U8                                 
+20    TI02229      NC7SZ57, UHS configurable Logic Gate              3     U10;U14-15                         
+21    TI02572      74LV74A, QFN14, -40-+85°C, 2V-5V                  1     U19                                
+22    TM02112      SDRAM 2Mx32x4, 256Mbit, 3.3V, FBGA90              1     U3                                 
+23    TM02137      EEPROM 24C64, 8KByte, I²C, TSSOP8, -40-+85°       1     U21                                
+24    TM02299      EEPROM 8K, SPI, SO8, 2.5-5.5V, -40-+85°           1     U23                                
+25    TM02319      NAND-Flash 32Mx8, 3.3V, TBGA63, -40-+85°C         1     U2                                 
+26    TP02510      NS9360, BGA3272, 0-+70°, 177MHz, Pb-free          1     U1                                 
+27    TQ01436      Quartz, 25MHz, SMD6x3.5mm, -40 - +85°C            1     Q2                                 
+28    TQ02033      Quarz, 48MHZ, 6x3,5mm, -10-+60°, Fundamen         1     Q3                                 
+29    TQ02301      Quartz 32.768KHz, JTX520, 20ppm, -40-+85°         1     Q1                                 
+30    TQ02304      Quartz 29.4912MHz, SMD, JXE, -40-+85°             1     G2                                 
+31    TR00678      4x10k , 1206, 5%,  Widerstandsnetzwerk            2     RN1;RN7                            
+32    TR01419      100K, 0603, 1%, Widerstand                        1     R24                                
+33    TR01432      4K7, 0603, 1% Widerstand                          3     R48;R66-67                         
+34    TR01434      10Kx8, 5%, 1206, Widerstandsnetzwerk              2     RN2-3                              
+35    TR01611      100R, 0603, 1%, 1/16W, Widerstand                 2     R27;R64                            
+36    TR01628      330R, 0603, 1%, 200ppm, 1/16W, Widerstand         1     R40                                
+37    TR01673      470R, 1%, 1/16W, 0603, Widerstand                 1     R30                                
+38    TR01722      220K, 1%, 100ppm, 0603, 100mW, SMD, Widerstand    1     R23                                
+39    TR01912      1K2, 0603, 1%, 63mW, Widerstand                   1     R34                                
+40    TR01913      33K, 0603, 1%, 63mW, Widerstand                   1     R42                                
+41    TR01914      22K, 0603, 1%, 63mW, Widerstand                   1     R9                                 
+42    TR01975      22R, 0603, 1%, Widerstand                         1     R28                                
+43    TR01981      4x22R, 1206, 5%,  Widerstandsnetzwerk             5     RN6;RN8;RN10-12                    
+44    TR01998      49R9, 0603, 1%, 63mW,  Widerstand                 2     R6-7                               
+45    TR01999      1M, 0603, 1%, 63mW,  Widerstand                   1     R39                                
+46    TR02284      110K, 0603, 1%, SMD, Widerstand                   1     R25                                
+47    TR02285      0,27R, 0805, 1% , SMD, Widerstand                 2     R56-57                             
+48    TR02323      1K8, 0603, 1% Widerstand                          2     R35;R61                            
+49    TR02327      10K, 0402, 1%, Widerstand                         19    R1;R4-5;R8                         
+                                                                           R11;R16-17;R20-21
+                                                                           R29;R31-32;R50-54
+                                                                           R60;R82
+50    TR02452      1K, 0402, 1%, 1/16W, Widerstand                   1     R26                                
+51    TR02499      0R0, 0402, Brücke                                 16    R2;R12-13;R22                      
+                                                                           R33;R36-38;R41
+                                                                           R49;R55;R65
+                                                                           R69;R76-77;R81
+52    TR02513      1M5, 0603, 1%, 63mW,  Widerstand                  1     R68                                
+53    TR02525      2K2, 0402, 1%, 1/16W, Widerstand                  8     R44;R58;R71-75                     
+                                                                           R80
+54    TSI02058     10/100 MBit PHY, 3.3V, LQFP64, 0-70°              1     U4                                 
+55    TSI02104     MC74VHC1G66, SOT23/5, -55-+125°, An.Switch        3     U5-7                               
+56    TSI02276     TPS6420x, Step-Down Controller, SOT23             1     U11                                
+57    TSI02287     533MHz, PCI-X Clock-Buffer, 3.3V, TSSOP8          1     U9                                 
+58    TSI02289     NC7SB3157, UHS SPDT Analog Switch or MUX          4     U25-28                             
+59    TSI02313     DS1337, uSO8, -40-+85°, 3.3V I²C RTC              1     U22                                
+60    TSI02321     Triple Processor Supervisor, SO8, -40-+85°        1     U13                                
+61    TSI02523     TLV3012, SC70, 1.8-5.5V, -40-+85°                 1     U12                                
+62    TSI02524     TLC7701, TSSOP8, 2-6V, -40-+85°                   1     U16                                
+63    TT02278      Si2323DS, P-Channel, SOT23, 20V, 0.05R            1     V2                                 

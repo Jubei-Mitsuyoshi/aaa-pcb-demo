@@ -1,0 +1,6 @@
+Record=SheetSymbol|SourceDocument=TOP.SCHDOC|Designator=DIGITAL PROCESSING|SchDesignator=DIGITAL PROCESSING|FileName=DIGITAL_PROCESSING.SCHDOC
+Record=SheetSymbol|SourceDocument=TOP.SCHDOC|Designator=EXTERNAL I/O|SchDesignator=EXTERNAL I/O|FileName=EXTERNAL_IO.SCHDOC
+Record=SheetSymbol|SourceDocument=TOP.SCHDOC|Designator=POWER SUPPLY|SchDesignator=POWER SUPPLY|FileName=POWER_SUPPLY.SCHDOC
+Record=SheetSymbol|SourceDocument=TOP.SCHDOC|Designator=PRINTER INTERFACE|SchDesignator=PRINTER INTERFACE|FileName=PRINTER_INTERFACE.SCHDOC
+Record=SheetSymbol|SourceDocument=TOP.SCHDOC|Designator=SERIAL INTERFACE|SchDesignator=SERIAL INTERFACE|FileName=SERIAL_INTERFACE.SCHDOC
+Record=TopLevelDocument|FileName=TOP.SCHDOC

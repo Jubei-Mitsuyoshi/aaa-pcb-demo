@@ -1,0 +1,352 @@
+<html>
+<head>
+<META http-equiv="Content-Type" content="text/html; charset=UTF-16">
+<style type="text/css">
+		h1, h2, h3, h4, h5, h6 { 
+			font-family : sans-serif;
+			color : white;
+			background-color : #21489e;
+			padding: 0.3em;
+		}
+		body { 
+			font-family : verdana;
+		}
+		td, th {  
+			padding: 0.5em;
+			text-align : center;
+			width : 18%;	
+		}
+		th { 
+			background-color : #A6CAF0;
+		
+		}
+		th.column1, td.column1 { 
+			text-align: left;
+			width : auto; 
+		}
+		table { 
+			width : 100%; 
+		}
+		.front_matter, .front_matter_column1, .front_matter_column2, .front_matter_column3 {
+			padding-top : 0.1em;
+			padding-bottom : 0.1em;
+			border : 0px solid black;
+			width : auto;
+			vertical-align: top
+		}
+		.front_matter_column1 {
+			text-align : right;
+		}
+		.total_column1, .total_column {
+			font-weight : bold;	
+		}
+		.total_column1 {
+			text-align : right;
+		}
+		.front_matter_column2 {
+			text-align : center;
+		}
+		.front_matter_column3 {
+			text-align : left;
+		}
+		.warning, .error { 
+			color : red;
+			font-weight : bold;
+		}	
+		tr.onmouseout_odd { 
+			background-color : #EEEEE0 
+		}
+		tr.onmouseout_even { 
+			background-color : #F3F3E3   
+		}
+		tr.onmouseover_odd, tr.onmouseover_even { 
+			background-color : lightYellow 
+		} 
+		a:link, a:visited, .q a:link,.q a:active,.q {
+			color: #21489e; 
+		}
+		a:link.callback, a:visited.callback { 
+			color: #008000 
+		}
+		a:link.customize, a:visited.customize {
+			color: #C0C0C0;
+			position: absolute; 
+			right: 10px;
+		}	
+		p.contents_level1 {
+			font-weight : bold;
+			font-size : 110%;
+			margin : 0.5em;
+		}
+		p.contents_level2 {
+			position : relative;
+			left : 20px;
+			margin : 0.5em;
+		}
+	</style><script type="text/javascript">
+		function coordToMils(coord) {
+			var number = coord / 10000;
+			
+			if (number != number.toFixed(3))
+				number = number.toFixed(3);
+			
+			return number + 'mil'
+		}
+
+		function coordToMM(coord) {
+			var number = 0.0254 * coord / 10000;
+			
+			if (number != number.toFixed(4))
+				number = number.toFixed(4);
+			
+			return number + 'mm'
+		}
+	
+		function convertCoord(coordNode, units) {
+			for (var i = 0; i < coordNode.childNodes.length; i++) {
+				coordNode.removeChild(coordNode.childNodes[i]);		
+			}
+
+			var coord = coordNode.getAttribute('value');
+			if (coord != null) {
+				if (units == 'mm') {	
+					textNode = document.createTextNode(coordToMM(coord));
+					coordNode.appendChild(textNode);
+				} else if (units == 'mil') {
+					textNode = document.createTextNode(coordToMils(coord));		
+					coordNode.appendChild(textNode);	
+				}
+			}
+		}
+	
+		function convertUnits(unitNode, units) {
+			for (var i = 0; i < unitNode.childNodes.length; i++) {
+				unitNode.removeChild(unitNode.childNodes[i]);		
+			}
+		
+			textNode = document.createTextNode(units); 
+			unitNode.appendChild(textNode);
+		}
+	
+		function changeUnits(radio_input, units) {
+			if (radio_input.checked) {
+			
+				var elements = document.getElementsByName('coordinate');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertCoord(elements[i], units);
+					}
+				}
+	
+				var elements = document.getElementsByName('units');
+				if (elements) {
+					for (var i = 0; i < elements.length; i++) {
+						convertUnits(elements[i], units);
+					}
+				}
+			}
+		}	
+	</script></head>
+<body onload=""><img ALT="Altium" src="
+			file://C:\PROGRAM FILES\ALTIUM DESIGNER 6\Templates\AD-rgb_logo_223x64.gif
+		"><a href="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports" class="customize"><acronym title="dxpprocess://Client:SetupPreferences?Server=PCB|PageName=Reports">customize</acronym></a><h1>Design Rule Verification Report</h1>
+<table class="front_matter">
+<tr class="front_matter">
+<td class="front_matter_column1">Date</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">10/2/2006</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">2:13:52 PM</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Elapsed Time</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3">00:01:02</td>
+</tr>
+<tr class="front_matter">
+<td class="front_matter_column1">Filename</td>
+<td class="front_matter_column2">:</td>
+<td class="front_matter_column3"><a href="file:///C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc" class="file"><acronym title="C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc">C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc</acronym></a></td>
+</tr>
+</table>
+<hr><a name="IDAQFWAY"><h2>Summary</h2></a><table>
+<tr>
+<th class="column1">Warnings</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDA2FWAY">Multilayer Pads with 0 size Hole found</a></td>
+<td class="column2">3</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">3</td>
+</tr>
+</table><br><table>
+<tr>
+<th class="column1">Rule Violations</th>
+<th class="column2">Count</th>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAVCWAY">Short-Circuit Constraint (Allowed=Yes) (InNet('0VM') And OnLayer('Mid-Layer 1')),(InNet('0VD') And OnLayer('Mid-Layer 1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDACDWAY">Clearance Constraint (Gap=-5mm) (InNet('0VM') And OnLayer('Mid-Layer 1')),(InNet('0VD') And OnLayer('Mid-Layer 1'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAKDWAY">Supply Net(s)(InNetClass('PowerNets'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDATDWAY">Width Constraint (Min=0.254mm) (Max=1mm) (Preferred=0.5mm) (InNetClass('PowerNets'))</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDA4DWAY">Component Clearance Constraint (Full Check Mode) ( Horizontal Gap = 0.2mm) (All),(All) </a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDADCWAY">Short-Circuit Constraint (Allowed=No) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAHCWAY">Broken-Net Constraint ( (All) )</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDACCWAY">Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAHIWAY">Pads and Vias to follow the Drill pairs settings</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDARIWAY">Hole Size Constraint (Min=0.025mm) (Max=5.54mm) (All)</a></td>
+<td class="column2">3</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAFKWAY">Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDAPKWAY">Width Constraint (Min=0.15mm) (Max=5mm) (Preferred=0.15mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDAZKWAY">Routing Via (MinHoleWidth=0.2mm) (MaxHoleWidth=0.4mm) (PreferredHoleWidth=0.3mm) (MinWidth=0.4mm) (MaxWidth=0.9mm) (PreferedWidth=0.6mm) (All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="#IDADLWAY">Clearance Constraint (Gap=0.15mm) (All),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="#IDANLWAY">Clearance Constraint (Gap=0mm) ((InComponent('FID1') AND InComponent('FID2') AND InComponent('FID3') AND InComponent('H1') AND InComponent('H2'))),(All)</a></td>
+<td class="column2">0</td>
+</tr>
+<tr>
+<td style="font-weight : bold; text-align : right" class="column1">Total</td>
+<td style="font-weight : bold" class="column2">6</td>
+</tr>
+</table><br><hr><a name="IDAGGWAY"><h2>Warnings</h2></a><a name="IDA2FWAY"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="warning">Multilayer Pads with 0 size Hole found</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.625mil|Location2.Y=11684.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.625mil|Location2.Y=11684.445mil|Absolute=True">Pad FID2-1(-71.5mm,-25mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=3277.336mil|Location2.X=9326.994mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=3277.336mil|Location2.X=9326.994mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True">Pad FID1-1(-240.5mm,-122mm)  Multi-Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True">Pad FID3-1(-90.5mm,-122mm)  Multi-Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><hr><a name="IDAVCWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Short-Circuit Constraint (Allowed=Yes) (InNet('0VM') And OnLayer('Mid-Layer 1')),(InNet('0VD') And OnLayer('Mid-Layer 1'))</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDACDWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Clearance Constraint (Gap=-5mm) (InNet('0VM') And OnLayer('Mid-Layer 1')),(InNet('0VD') And OnLayer('Mid-Layer 1'))</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAKDWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Supply Net(s)(InNetClass('PowerNets'))</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDATDWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Width Constraint (Min=0.254mm) (Max=1mm) (Preferred=0.5mm) (InNetClass('PowerNets'))</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDA4DWAY"><table>
+<tr>
+<th style="text-align : left" colspan="2" class="rule">Component Clearance Constraint (Full Check Mode) ( Horizontal Gap = 0.2mm) (All),(All) </th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=6863.388mil|Location2.Y=10549.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=6863.388mil|Location2.Y=10549.208mil|Absolute=True">Component MOD1 (-76.4mm,-77.435mm) on Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.626mil|Location2.Y=11684.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.626mil|Location2.Y=11684.445mil|Absolute=True">Small Component TOOL1-none (-85.5mm,-25mm) on Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7760.185mil|Location2.Y=11446.005mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7760.185mil|Location2.Y=11446.005mil|Absolute=True">Component U3-AWT25-000108 (-98.674mm,-31.056mm) on Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.626mil|Location2.Y=11684.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.626mil|Location2.Y=11684.445mil|Absolute=True">Small Component TOOL1-none (-85.5mm,-25mm) on Top Layer</acronym></a></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td style="width:50%; text-align:left" class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=8021.257mil|Location2.Y=11707.077mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=8021.257mil|Location2.Y=11707.077mil|Absolute=True">SMT Small Component C4-CXD100N0K025AR (-114.275mm,-24.625mm) on Top Layer</acronym></a></td>
+<td style="width:50%; text-align:left" class="column2"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=6863.388mil|Location2.Y=10549.208mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=6863.388mil|Location2.Y=10549.208mil|Absolute=True">Component MOD1 (-76.4mm,-77.435mm) on Top Layer</acronym></a></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDADCWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Short-Circuit Constraint (Allowed=No) (All),(All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAHCWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Broken-Net Constraint ( (All) )</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDACCWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Height Constraint (Min=0mm) (Max=50mm) (Prefered=12.7mm) (All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAHIWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Pads and Vias to follow the Drill pairs settings</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDARIWAY"><table>
+<tr>
+<th style="text-align : left" colspan="1" class="rule">Hole Size Constraint (Min=0.025mm) (Max=5.54mm) (All)</th>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.625mil|Location2.Y=11684.445mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=7998.625mil|Location2.Y=11684.445mil|Absolute=True">Pad FID2-1(-71.5mm,-25mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_even" onmouseover="className = 'onmouseover_even'" onmouseout="className = 'onmouseout_even'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=3277.336mil|Location2.X=9326.994mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=3277.336mil|Location2.X=9326.994mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True">Pad FID1-1(-240.5mm,-122mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+<tr class="onmouseout_odd" onmouseover="className = 'onmouseover_odd'" onmouseout="className = 'onmouseout_odd'">
+<td class="column1"><a href="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True" class="callback"><acronym title="dxpprocess://PCB:Zoom?document=C:\ZRLaptop\ALTIUM6WORK\IMMAINMECHOK\AWT25-000093.PcbDoc;viewname=PCBEditor;Action=Area|Location1.X=8232.207mil|Location2.X=14281.865mil|Location1.Y=4779.24mil|Location2.Y=8465.06mil|Absolute=True">Pad FID3-1(-90.5mm,-122mm)  Multi-Layer</acronym></a><br></td>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAFKWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Differential Pairs Uncoupled Length using the Gap Constraints (Min=0.254mm) (Max=0.254mm) (Preferred=0.254mm) (All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAPKWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Width Constraint (Min=0.15mm) (Max=5mm) (Preferred=0.15mm) (All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDAZKWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Routing Via (MinHoleWidth=0.2mm) (MaxHoleWidth=0.4mm) (PreferredHoleWidth=0.3mm) (MinWidth=0.4mm) (MaxWidth=0.9mm) (PreferedWidth=0.6mm) (All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDADLWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Clearance Constraint (Gap=0.15mm) (All),(All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br><a name="IDANLWAY"><table>
+<tr>
+<th style="text-align : left" colspan="0" class="rule">Clearance Constraint (Gap=0mm) ((InComponent('FID1') AND InComponent('FID2') AND InComponent('FID3') AND InComponent('H1') AND InComponent('H2'))),(All)</th>
+</tr>
+</table></a><a href="#top">Back to top</a><br><br></body>
+</html>
